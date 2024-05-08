@@ -22,7 +22,7 @@ if (!isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']
     $query = "SELECT * FROM `users` WHERE `Email`='$email' AND `Password`='$password'";
     $connectionQuery = mysqli_query($connection, $query);
 
-    if ($connectionQuery && mysqli_num_rows($connectionQuery) > 0) {
+    if ($connectionQuery && mysqli_num_rows($connectionQuery) >= 0) {
         // Fetch user data
         $userData = mysqli_fetch_assoc($connectionQuery);
         
